@@ -1,0 +1,16 @@
+.btn
+{
+    color: blue;
+    size: 2px;
+}
+.name{
+    float: right;
+    size: 100%;
+    position: relative;
+    overflow: hidden;
+}
+.Add{
+    color: crimson;
+    font-size: medium;
+    font-style: italic;
+}

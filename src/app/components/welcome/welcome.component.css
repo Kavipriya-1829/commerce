@@ -1,0 +1,12 @@
+.text
+{
+    color: rgb(220, 20, 197);
+    direction: right;
+}
+.center
+{
+  display: block;
+  margin-left: auto;
+  margin-right: auto;
+  width: 50%;
+}

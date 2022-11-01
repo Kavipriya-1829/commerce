@@ -1,0 +1,27 @@
+.navbar-sidebar {
+    overflow: hidden;
+    text-align: right;
+    font-size: large;
+    text-size-adjust: 50px;
+    background-color: rgb(166, 176, 199);
+    color: rgb(15, 131, 232);
+    position: static;
+    top: 50px; 
+    width: 100%; 
+  }
+  .logo{
+    text-align: left;
+  }
+  h1
+  {
+    text-align: center;
+  }
+  
+.footer{
+    position: fixed;
+    left: 0;
+    bottom: 0;
+    width: 100%;
+    color: aliceblue;
+    text-align: center;
+}

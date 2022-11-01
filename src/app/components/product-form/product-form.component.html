@@ -1,0 +1,157 @@
+<html>
+    <body>
+        <head>
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+  <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.4.1/css/bootstrap.min.css">
+  <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.6.0/jquery.min.js"></script>
+  <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.4.1/js/bootstrap.min.js"></script>
+</head>
+<div class="main-content">
+    <div class="section-content section-content-p30">
+        <div class="container-fluid">
+            <div *ngIf = "product.elproduct_id ==0" class="Add"> <h2>Add Product</h2></div>
+            <div *ngIf = "product.elproduct_id >0">  <h2>Update Product</h2></div>
+            <hr>
+                <img src="assets\images\form.jpg" alt="Afdharika Mart" class="name" height="400" width="400">
+            <form #SPAForm="ngForm" (ngSubmit)="onSubmit()">
+                <div class="form-group-row">
+                    <div class="form-group-row">
+                        <label class="col-sm-2 col-form-label">ProductName</label>
+                        <input type="text" name="pname" [(ngModel)]="product.pname"  required minlength="4" appForbiddenName="bob"
+                        [(ngModel)]="product.pname" #name="ngModel"/>
+                        <div *ngIf="name.invalid && (name.dirty || name.touched)"
+        class="alert">
+        <div *ngIf="name.errors?.['required']">
+            Name is required.
+          </div>
+          <div *ngIf="name.errors?.['minlength']">
+            Name must be at least 4 characters long.
+          </div>
+          <div *ngIf="name.errors?.['forbiddenName']">
+            Name cannot be Bob.
+          </div>
+        </div>
+      
+                    </div>
+    
+                </div><br>
+                <div class="form-group-row">
+                    <label class="col-sm-2 col-form-label">ProductDescription</label>
+                    <input type="text" name="elproduct_description" [(ngModel)]="product.elproduct_description" required minlength="4" appForbiddenName="bob"
+                    [(ngModel)]="product.elproduct_description" #name="ngModel" />
+                    <div *ngIf="name.invalid && (name.dirty || name.touched)"
+        class="alert">
+        <div *ngIf="name.errors?.['required']">
+            Desc is required.
+          </div>
+          <div *ngIf="name.errors?.['minlength']">
+            Desc must be at least 4 characters long.
+          </div>
+          <div *ngIf="name.errors?.['forbiddenName']">
+            Desc cannot be Bob.
+          </div>
+        </div> />
+                </div><br>
+                <div class="form-group-row">
+                    <label class="col-sm-2 col-form-label">UnitPrice</label> 
+                    <input type="text" name="unit_price" [(ngModel)]="product.unit_price" required minlength="3" appForbiddenName="bob"
+                    [(ngModel)]="product.unit_price" #name="ngModel" />
+                    <div *ngIf="name.invalid && (name.dirty || name.touched)"
+        class="alert">
+        <div *ngIf="name.errors?.['required']">
+            Price is required.
+          </div>
+          <div *ngIf="name.errors?.['minlength']">
+            Price must be at least 3 characters long.
+          </div>
+          <div *ngIf="name.errors?.['forbiddenName']">
+            Price cannot be Bob.
+          </div>
+        </div>
+                </div><br>
+                <div class="form-group-row">
+                    <label class="col-sm-2 col-form-label">ImagePath</label> 
+                    <input type="text" name="elproduct_image" [(ngModel)]="product.elproduct_image" required minlength="3" appForbiddenName="bob"
+                    [(ngModel)]="product.elproduct_image" #name="ngModel" />
+                    <div *ngIf="name.invalid && (name.dirty || name.touched)"
+        class="alert">
+        <div *ngIf="name.errors?.['required']">
+            ImagePath is required.
+          </div>
+          <div *ngIf="name.errors?.['minlength']">
+            ImagePath must be at least 3 characters long.
+          </div>
+          <div *ngIf="name.errors?.['forbiddenName']">
+            ImagePath cannot be Bob.
+          </div>
+        </div>/>
+                </div><br>
+                <div class="form-group-row">
+                    <label class="col-sm-2 col-form-label">Active</label>
+                    <input type="text" name="active" [(ngModel)]="product.active" required minlength="1" appForbiddenName="bob"
+                    [(ngModel)]="product.active" #name="ngModel" />
+                    <div *ngIf="name.invalid && (name.dirty || name.touched)"
+        class="alert">
+        <div *ngIf="name.errors?.['required']">
+            Active is required.
+          </div>
+          <div *ngIf="name.errors?.['minlength']">
+            Active must be at least 1 characters long.
+          </div>
+          <div *ngIf="name.errors?.['forbiddenName']">
+            Active cannot be Bob.
+          </div>
+        </div>/>
+                </div><br>
+                <div class="form-group-row">
+                    <label class="col-sm-2 col-form-label">AvailableStock</label>
+                    <input type="text" name="available_stock" [(ngModel)]="product.available_stock" required minlength="1" appForbiddenName="bob"
+                    [(ngModel)]="product.available_stock" #name="ngModel" />
+                    <div *ngIf="name.invalid && (name.dirty || name.touched)"
+        class="alert">
+        <div *ngIf="name.errors?.['required']">
+            AvailableStock is required.
+          </div>
+          <div *ngIf="name.errors?.['minlength']">
+            AvailableStock must be at least 1 characters long.
+          </div>
+          <div *ngIf="name.errors?.['forbiddenName']">
+            AvailableStock cannot be Bob.
+          </div>
+        </div>/>
+                </div><br>
+                <div class="form-group-row">
+                    <label class="col-sm-2 col-form-label">DateCreated</label>
+                    <input type="text" name="date_created" [(ngModel)]="product.date_created" />
+                </div><br>
+                <div class="form-group-row">
+                    <label class="col-sm-2 col-form-label">LastUpdated</label>
+                    <input type="text" name="last_updated" [(ngModel)]="product.last_updated"/>
+                </div><br>
+                <div class="form-group-row">
+                    <label class="col-sm-2 col-form-label">CategoryId</label>
+                    <input type="text" name="elcategory_id" [(ngModel)]="product.elcategory_id" required minlength="1" appForbiddenName="bob"
+                    [(ngModel)]="product.elcategory_id" #name="ngModel" />
+                    <div *ngIf="name.invalid && (name.dirty || name.touched)"
+        class="alert">
+        <div *ngIf="name.errors?.['required']">
+            CategoryId is required.
+          </div>
+          <div *ngIf="name.errors?.['minlength']">
+            CategoryId must be at least 1 characters long.
+          </div>
+          <div *ngIf="name.errors?.['forbiddenName']">
+            CategoryId cannot be Bob.
+          </div>
+        </div>/>
+                </div><br>
+                <div class="form-group-row">
+                    <div class="col-sm-2"><button class="btn" type="submit">submit</button></div>
+                </div>
+
+            </form>
+            </div>
+            </div>
+            </div>
+</body>
+</html>

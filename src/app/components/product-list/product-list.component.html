@@ -1,0 +1,51 @@
+<html>
+    <body>
+        <head>
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+  <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.4.1/css/bootstrap.min.css">
+  <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.6.0/jquery.min.js"></script>
+  <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.4.1/js/bootstrap.min.js"></script>
+</head>
+<div class="main-content">
+    <div class="section-content section-content-p30">
+        <div class="container-fluid">
+            <td><button type="button" class="btn btn-md btn-info" (click) = "addProd()">Add Product</button></td>
+
+            <div class="row">
+              <table class='table table-bordered' table-border="1">
+                <thead>
+                    <tr class='table-dark' tr-border="1">
+                        <th>Product Id</th>
+                        <th>Product Name</th>
+                        <th>Product Desc</th>
+                        <th>Unit Price</th>
+                        <th>Available Stock</th>
+                        <th>Action</th>
+                    </tr>
+            
+                </thead>
+                <tr align="center">
+                    <td>3</td>
+                    <td>Chair</td>
+                    <td>Comfortable upto 100kg </td>
+                    <td>4000.00</td>
+                    <td>150</td>
+                </tr>
+                <tr *ngFor="let tempProd of products" align="center">
+                    <td>{{tempProd.elproduct_id}}</td>
+                    <td>{{tempProd.pname}}</td>
+                    <td>{{tempProd.elproduct_description}}</td>
+                    <td>{{tempProd.unit_price}}</td>
+                    <td>{{tempProd.available_stock}}</td>
+                    <td><button type="button" class="btn btn-md btn-info" (click) = "updateProduct(tempProd.elproduct_id)">Update</button>
+                        &nbsp; &nbsp;
+                            <button type="button" class="btn btn-md btn-danger" (click) = "deleteProduct(tempProd.elproduct_id)">Delete </button></td>
+    
+                </tr>
+            </table>
+            </div>
+        </div>
+    </div>
+</div>
+</body>
+</html>
